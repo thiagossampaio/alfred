@@ -30,6 +30,11 @@
 		<github.global.server>github</github.global.server>
 	</properties>
 
+	<issueManagement>
+		<system>Github</system>
+		<url>https://github.com/thiagonego/alfred/issues</url>
+	</issueManagement>
+
 	<licenses>
 		<license>
 			<name>The Apache Software License, Version 2.0</name>
