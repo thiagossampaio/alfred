@@ -9,14 +9,14 @@ final public class AlfredConfig {
 	private boolean usingProxy = false;
 	private Proxy proxy;
 	private static AlfredConfig instancia = new AlfredConfig();
-	
+
 	private AlfredConfig() {
 	}
 
 	public void setUsingProxy(boolean b) {
 		this.usingProxy = b;
 	}
-	
+
 	public boolean isUsingProxy() {
 		return usingProxy;
 	}
