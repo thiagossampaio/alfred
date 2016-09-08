@@ -3,6 +3,7 @@ package br.com.twsoftware.alfred.object;
 
 import java.lang.reflect.Array;
 import java.lang.reflect.Field;
+import java.math.BigDecimal;
 import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -54,9 +55,9 @@ public class Objeto{
                     }
 
                } else if (obj instanceof Boolean) {
-                    
+
                     return false;
-                    
+
                } else if (obj.getClass().isArray()) {
 
                     int length = Array.getLength(obj);
@@ -69,19 +70,19 @@ public class Objeto{
                     return true;
 
                } else if ((obj instanceof AbstractMap)) {
-                    
-                    if(((AbstractMap) obj).isEmpty()){
+
+                    if (((AbstractMap) obj).isEmpty()) {
                          return true;
                     }
-                    
+
                }
-               
+
                boolean existeGetters = false;
                boolean nulo = true;
-               
+
                List<Field> fields = new ArrayList<Field>();
                getAllFields(fields, obj.getClass());
-               
+
                for (Field field : fields) {
                     if (Reflexao.existeGet(obj, field.getName())) {
                          existeGetters = true;
@@ -91,11 +92,11 @@ public class Objeto{
                          }
                     }
                }
-               
-               if(existeGetters && nulo){
+
+               if (existeGetters && nulo) {
                     return true;
                }
-               
+
           } catch (Exception e) {
                e.printStackTrace();
           }
@@ -103,17 +104,17 @@ public class Objeto{
           return false;
 
      }
-     
+
      public static List<Field> getAllFields(List<Field> fields, Class<?> type) {
-          
+
           fields.addAll(Arrays.asList(type.getDeclaredFields()));
 
           if (type.getSuperclass() != null) {
-              fields = getAllFields(fields, type.getSuperclass());
+               fields = getAllFields(fields, type.getSuperclass());
           }
 
           return fields;
-      }     
+     }
 
      /**
       * M�todo que faz a nega��o do m�todo isBlank. A id�ia � que seja gen�rico para todo tipo de objeto.
@@ -132,7 +133,7 @@ public class Objeto{
           if (objs == null) {
                return false;
           }
-          
+
           for (Object o : objs) {
                if (isBlank(o)) {
                     return false;
@@ -164,5 +165,19 @@ public class Objeto{
           }
           return o2;
      }
+
+     public static <E> E coalesce(E o1, E o2) {
+
+          if (Objeto.notBlank(o1)) {
+               return o1;
+          }
+          return o2;
+     }
+     
+     @SafeVarargs
+     public static <E> E coalesce(E ...itens) {
+          for(E i : itens) if(Objeto.notBlank(i)) return i;
+          return null;
+      }
 
 }
