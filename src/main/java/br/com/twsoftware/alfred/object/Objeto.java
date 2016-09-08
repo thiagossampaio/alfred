@@ -3,7 +3,6 @@ package br.com.twsoftware.alfred.object;
 
 import java.lang.reflect.Array;
 import java.lang.reflect.Field;
-import java.math.BigDecimal;
 import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.Arrays;
