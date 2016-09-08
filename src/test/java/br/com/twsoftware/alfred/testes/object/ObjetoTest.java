@@ -1,6 +1,7 @@
 
 package br.com.twsoftware.alfred.testes.object;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -95,6 +96,29 @@ public class ObjetoTest{
           pessoa.setEmail(null);
           pessoa.setNome("");
           Assert.assertTrue(Objeto.isBlank(pessoa));
+          
+     }
+     
+     @Test
+     public void testeCoalesce() {
+
+          Assert.assertEquals(1, Objeto.coalesce("", 1));
+          Assert.assertEquals(1, Objeto.coalesce(1, ""));
+          Assert.assertEquals(Integer.valueOf(1), Objeto.coalesce(null, 1));
+          Assert.assertEquals(Integer.valueOf(1), Objeto.coalesce(1, null));
+          Assert.assertEquals(Integer.valueOf(1), Objeto.coalesce(1, 2));
+          
+          Assert.assertEquals(BigDecimal.valueOf(1), Objeto.coalesce(null, BigDecimal.ONE));
+          Assert.assertEquals(BigDecimal.valueOf(1), Objeto.coalesce(BigDecimal.ONE, null));
+          Assert.assertEquals(BigDecimal.valueOf(1), Objeto.coalesce(BigDecimal.ONE, 2));
+          
+          
+          Assert.assertEquals(1, Objeto.coalesce("", 1, null, null, 2));
+          Assert.assertEquals(1, Objeto.coalesce(1, "", "", null));
+          Assert.assertEquals(Integer.valueOf(1), Objeto.coalesce(null, 1, null, 2, 5));
+          Assert.assertEquals(Integer.valueOf(1), Objeto.coalesce(1, null, 5, null, 8));
+          Assert.assertEquals(Integer.valueOf(1), Objeto.coalesce(null, null, null, 1));
+          Assert.assertNull(Objeto.coalesce(null, null, null));
           
      }
 
