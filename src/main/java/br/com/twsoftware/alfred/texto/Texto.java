@@ -29,6 +29,7 @@ import java.util.regex.Pattern;
 import javax.swing.text.MaskFormatter;
 
 import br.com.twsoftware.alfred.numeros.Numeros;
+import br.com.twsoftware.alfred.object.Objeto;
 import br.com.twsoftware.alfred.telefones.Telefones;
 
 import sun.misc.BASE64Encoder;
@@ -810,4 +811,23 @@ public class Texto {
         return buf.toString();
         
     } 	
+    
+    /**
+     * Método responsável por reverter um texto
+     * 
+     * @param texto 
+     * Texto a ser revertido
+     * @return
+     * Testo revertido
+     */
+    public static String reverse(String texto) {
+         
+         String stringReverse = null;
+         if (Objeto.notBlank(texto)) {
+              
+              StringBuffer buf = new StringBuffer(texto);
+              stringReverse = buf.reverse().toString();
+         }
+         return stringReverse;
+    }
 }
