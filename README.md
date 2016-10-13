@@ -20,9 +20,9 @@ Como utilizamos o github para hospedar, a iblioteca JitPack tem nos ajudado muit
 
 ```xml
 	<dependency>
-	    <groupId>com.github.filipegermano</groupId>
+	    <groupId>com.github.thiagonego</groupId>
 	    <artifactId>alfred</artifactId>
-	    <version>1.1</version>
+	    <version>1.0</version>
 	</dependency>
 ```
 
