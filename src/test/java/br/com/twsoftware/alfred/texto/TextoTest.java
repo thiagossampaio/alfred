@@ -18,5 +18,24 @@ public class TextoTest{
           Assert.assertNull(Texto.reverse(""));
           Assert.assertNull(Texto.reverse(null));
      }
+     
+     @Test
+     public void testeIsBlankOrNullOrZero() {
+          
+          Assert.assertTrue(Texto.isBlankOrNullOrZero(""));
+          Assert.assertTrue(Texto.isBlankOrNullOrZero("0000000.0000000"));
+          Assert.assertTrue(Texto.isBlankOrNullOrZero("000,000"));
+          Assert.assertTrue(Texto.isBlankOrNullOrZero("0,0"));
+          Assert.assertTrue(Texto.isBlankOrNullOrZero("000.000.000,000"));
+          Assert.assertFalse(Texto.isBlankOrNullOrZero("000.000.000,001"));
+          Assert.assertFalse(Texto.isBlankOrNullOrZero("5"));
+          Assert.assertFalse(Texto.isBlankOrNullOrZero("asd"));
+          Assert.assertFalse(Texto.isBlankOrNullOrZero("5,0"));
+          Assert.assertFalse(Texto.isBlankOrNullOrZero("05,0"));
+          Assert.assertFalse(Texto.isBlankOrNullOrZero("0,05"));
+          Assert.assertFalse(Texto.isBlankOrNullOrZero("055.05"));
+          Assert.assertFalse(Texto.isBlankOrNullOrZero("0.05"));
+          
+     }
 
 }

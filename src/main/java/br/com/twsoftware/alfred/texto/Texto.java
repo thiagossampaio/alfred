@@ -634,6 +634,15 @@ public class Texto {
     public static boolean isBlankOrNull(String texto) {
         return texto == null || texto.equals("") || texto.trim().equals("");
     }
+    
+    /**
+     * M�todo que verifica se uma string � vazia ou nula ou zero.
+     * @param texto A string a ser verificada.
+     * @return Indica��o de sucesso ou n�o.
+     */
+    public static boolean isBlankOrNullOrZero(String texto) {
+         return texto == null || texto.equals("") || texto.replace("0", "").replace(".", "").replace(",", "").trim().equals("");
+    }
 
     /**
      * M�todo que preenche um campo com m�scara.
