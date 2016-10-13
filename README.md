@@ -4,7 +4,7 @@ Suite de aplicativos para Java/Groovy. Esse projeto foi inicialmente criado por 
 
 ## Uso
 
-Como utilizamos o github para hospedar, a iblioteca JitPack tem nos ajudado muito para empacotar e distribuir o Alfred. Portanto para utilizá-lo em seu projeto basta adicionar um repositório e referênciar a lib da seguinte forma.
+Como utilizamos o github para hospedar, a blioteca JitPack tem nos ajudado muito para empacotar e distribuir o Alfred. Portanto para utilizá-lo em seu projeto basta adicionar um repositório e referênciar a lib da seguinte forma.
 
 
 #### Maven 
@@ -22,7 +22,7 @@ Como utilizamos o github para hospedar, a iblioteca JitPack tem nos ajudado muit
 	<dependency>
 	    <groupId>com.github.filipegermano</groupId>
 	    <artifactId>alfred</artifactId>
-	    <version>1.1</version>
+	    <version>1.2</version>
 	</dependency>
 ```
 
@@ -39,9 +39,9 @@ Como utilizamos o github para hospedar, a iblioteca JitPack tem nos ajudado muit
 
 ```groovy
 	<dependency>
-	    <groupId>com.github.thiagonego</groupId>
+	    <groupId>com.github.filipegermano</groupId>
 	    <artifactId>alfred</artifactId>
-	    <version>1.0</version>
+	    <version>1.2</version>
 	</dependency>
 ```
 
@@ -52,5 +52,5 @@ Como utilizamos o github para hospedar, a iblioteca JitPack tem nos ajudado muit
 ```
 
 ```skala
-	libraryDependencies += "com.github.thiagonego" % "alfred" % "1.0"	
+	libraryDependencies += "com.github.filipegermano" % "alfred" % "1.2"	
 ```
