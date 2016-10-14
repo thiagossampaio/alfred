@@ -29,6 +29,7 @@ import java.util.regex.Pattern;
 import javax.swing.text.MaskFormatter;
 
 import br.com.twsoftware.alfred.numeros.Numeros;
+import br.com.twsoftware.alfred.object.Objeto;
 import br.com.twsoftware.alfred.telefones.Telefones;
 
 import sun.misc.BASE64Encoder;
@@ -633,6 +634,15 @@ public class Texto {
     public static boolean isBlankOrNull(String texto) {
         return texto == null || texto.equals("") || texto.trim().equals("");
     }
+    
+    /**
+     * Mï¿½todo que verifica se uma string ï¿½ vazia ou nula ou zero.
+     * @param texto A string a ser verificada.
+     * @return Indicaï¿½ï¿½o de sucesso ou nï¿½o.
+     */
+    public static boolean isBlankOrNullOrZero(String texto) {
+         return isBlankOrNull(texto) || texto.contains("0") && texto.replace("0", "").replace(".", "").replace(",", "").trim().equals("");
+    }
 
     /**
      * Mï¿½todo que preenche um campo com mï¿½scara.
@@ -810,4 +820,23 @@ public class Texto {
         return buf.toString();
         
     } 	
+    
+    /**
+     * Método responsável por reverter um texto
+     * 
+     * @param texto 
+     * Texto a ser revertido
+     * @return
+     * Testo revertido
+     */
+    public static String reverse(String texto) {
+         
+         String stringReverse = null;
+         if (Objeto.notBlank(texto)) {
+              
+              StringBuffer buf = new StringBuffer(texto);
+              stringReverse = buf.reverse().toString();
+         }
+         return stringReverse;
+    }
 }
