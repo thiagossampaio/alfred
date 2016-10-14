@@ -27,6 +27,8 @@ public class TextoTest{
           Assert.assertTrue(Texto.isBlankOrNullOrZero("000,000"));
           Assert.assertTrue(Texto.isBlankOrNullOrZero("0,0"));
           Assert.assertTrue(Texto.isBlankOrNullOrZero("000.000.000,000"));
+          Assert.assertTrue(Texto.isBlankOrNullOrZero("..,0"));
+          Assert.assertFalse(Texto.isBlankOrNullOrZero("..,"));
           Assert.assertFalse(Texto.isBlankOrNullOrZero("000.000.000,001"));
           Assert.assertFalse(Texto.isBlankOrNullOrZero("5"));
           Assert.assertFalse(Texto.isBlankOrNullOrZero("asd"));
