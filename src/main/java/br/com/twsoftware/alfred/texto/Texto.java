@@ -641,7 +641,7 @@ public class Texto {
      * @return Indica��o de sucesso ou n�o.
      */
     public static boolean isBlankOrNullOrZero(String texto) {
-         return texto == null || texto.equals("") || texto.replace("0", "").replace(".", "").replace(",", "").trim().equals("");
+         return isBlankOrNull(texto) || texto.contains("0") && texto.replace("0", "").replace(".", "").replace(",", "").trim().equals("");
     }
 
     /**

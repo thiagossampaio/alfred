@@ -38,11 +38,7 @@ Como utilizamos o github para hospedar, a blioteca JitPack tem nos ajudado muito
 ```
 
 ```groovy
-	<dependency>
-	    <groupId>com.github.filipegermano</groupId>
-	    <artifactId>alfred</artifactId>
-	    <version>1.2</version>
-	</dependency>
+	compile group: 'com.github.filipegermano', name: 'alfred', version: '1.2'
 ```
 
 #### Sbt 
