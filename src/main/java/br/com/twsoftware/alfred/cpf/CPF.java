@@ -50,6 +50,18 @@ final public class CPF {
         return iniciais.toString() + gerarDigitoVerificador(iniciais.toString());
     }
 
+    /**
+     * Gerar um CPF arbitr�rio.
+     * C�digo obtido de http://www.javafree.org/artigo/851371/Validacao-de-CPF.html.
+     * Todos os direitos s�o do autor do c�digo.
+     *  
+     * @return CPF gerado arbitrariamente.
+     */
+    public static String gerarFormatado() {
+
+         return formatar(gerar());
+    }
+
 	/**
 	 * Obter um CPF qualquer e format�-lo. Qualquer caracter diferente de
 	 * n�meros ser� ignorado. Portanto, um CPF do tipo 1111c11b11122a ser�
