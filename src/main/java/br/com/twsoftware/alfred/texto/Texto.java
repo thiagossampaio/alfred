@@ -42,12 +42,18 @@ import sun.misc.BASE64Encoder;
  */
 public class Texto {
 	
-	private static final String VOGAIS_ACENTUADAS[] = { "ï¿½", "ï¿½", "ï¿½", "ï¿½",
-		"ï¿½", "ï¿½", "ï¿½", "ï¿½", "ï¿½", "ï¿½", "ï¿½", "ï¿½", "ï¿½", "ï¿½", "ï¿½", "ï¿½", "ï¿½",
-		"ï¿½", "ï¿½", "ï¿½", "ï¿½", "ï¿½", "ï¿½", "ï¿½", "ï¿½", "ï¿½", "ï¿½", "ï¿½" };
-	private static final String VOGAIS_NAO_ACENTUADAS[] = { "a", "a", "a", "a",
-			"e", "e", "i", "i", "o", "o", "o", "u", "u", "u", "A", "A", "A",
-			"A", "E", "E", "I", "I", "O", "O", "O", "U", "U", "U" };	
+	private static final String VOGAIS_ACENTUADAS[] = {"á", "é", "í", "ó", "ú", "Á", "É", "Í", "Ó", "Ú", "ý", "Ý",
+	          "à", "è", "ì", "ò", "ù", "À", "È", "Ì", "Ò", "Ù",
+	          "â", "ê", "î", "ô", "û", "Â", "Ê", "Î", "Ô", "Û",
+	          "ã", "õ", "Ã", "Õ", "ñ", "Ñ",
+	          "ä", "ë", "ï", "ö", "ü", "Ä", "Ë", "Ï", "Ö", "Ü", "ÿ",
+	          "ç", "Ç"};
+	private static final String VOGAIS_NAO_ACENTUADAS[] = {"a", "e", "i", "o", "u", "A", "E", "I", "O", "U", "y", "Y",
+	          "a", "e", "i", "o", "u", "A", "E", "I", "O", "U",
+	          "a", "e", "i", "o", "u", "A", "E", "I", "O", "U",
+	          "a", "o", "A", "O", "n", "N",
+	          "a", "e", "i", "o", "u", "A", "E", "I", "O", "U", "y",
+	          "c", "C"};	
 	
 	private static final String ABRE_PARENTESES = "(";
 	private static final String FECHA_PARENTESES = ")";

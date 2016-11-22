@@ -40,7 +40,18 @@ final public class CNPJ {
 			numero = Integer.valueOf((int) (Math.random() * 10));
 			iniciais.append(numero.toString());
 		}
-		return formatar(iniciais.toString() + gerarDigitoVerificador(iniciais.toString()));
+		return iniciais.toString() + gerarDigitoVerificador(iniciais.toString());
+	}
+
+	/**
+	 * Gerar um n�mero de CNPJ v�lido.<br>
+	 * Um n�mero de CNPJ que � v�lido n�o significa que exista.
+	 * 
+	 * @return CNPJ gerado.
+	 */
+	public static String gerarFormatado() {
+
+	     return formatar(gerar());
 	}
 
 	/**
