@@ -46,14 +46,12 @@ public class Texto {
 	          "à", "è", "ì", "ò", "ù", "À", "È", "Ì", "Ò", "Ù",
 	          "â", "ê", "î", "ô", "û", "Â", "Ê", "Î", "Ô", "Û",
 	          "ã", "õ", "Ã", "Õ", "ñ", "Ñ",
-	          "ä", "ë", "ï", "ö", "ü", "Ä", "Ë", "Ï", "Ö", "Ü", "ÿ",
-	          "ç", "Ç"};
+	          "ä", "ë", "ï", "ö", "ü", "Ä", "Ë", "Ï", "Ö", "Ü", "ÿ"};
 	private static final String VOGAIS_NAO_ACENTUADAS[] = {"a", "e", "i", "o", "u", "A", "E", "I", "O", "U", "y", "Y",
 	          "a", "e", "i", "o", "u", "A", "E", "I", "O", "U",
 	          "a", "e", "i", "o", "u", "A", "E", "I", "O", "U",
 	          "a", "o", "A", "O", "n", "N",
-	          "a", "e", "i", "o", "u", "A", "E", "I", "O", "U", "y",
-	          "c", "C"};	
+	          "a", "e", "i", "o", "u", "A", "E", "I", "O", "U", "y"};	
 	
 	private static final String ABRE_PARENTESES = "(";
 	private static final String FECHA_PARENTESES = ")";
@@ -262,7 +260,7 @@ public class Texto {
 	public static String retiraAcentos(String palavra) {
 		String palavraAlterada = palavra;
 		for (int i = 0; i < VOGAIS_ACENTUADAS.length; i++) {
-			palavraAlterada = palavraAlterada.replaceAll(VOGAIS_ACENTUADAS[i],
+			palavraAlterada = palavraAlterada.replace(VOGAIS_ACENTUADAS[i],
 					VOGAIS_NAO_ACENTUADAS[i]);
 		}
 		return palavraAlterada;
@@ -270,8 +268,8 @@ public class Texto {
 
 	public static String retiraCaracteresEspeciais(String texto) {
 		String novo = retiraAcentos(texto);
-		novo = novo.replaceAll("ï¿½", "c");
-		novo = novo.replaceAll("ï¿½", "C");
+		novo = novo.replaceAll("ç", "c");
+		novo = novo.replaceAll("Ç", "C");
 		return novo;
 	}
 
