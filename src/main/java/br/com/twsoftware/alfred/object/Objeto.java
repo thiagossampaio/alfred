@@ -106,7 +106,19 @@ public class Objeto{
 
      public static List<Field> getAllFields(List<Field> fields, Class<?> type) {
 
-          fields.addAll(Arrays.asList(type.getDeclaredFields()));
+          for (Field field : Arrays.asList(type.getDeclaredFields())) {
+
+               if (field.getType().getName().equalsIgnoreCase(type.getName())) {
+
+                    if (!field.getType().getName().equalsIgnoreCase(type.getName())) {
+                         fields.add(field);
+                    }
+
+               } else {
+                    fields.add(field);
+               }
+
+          }
 
           if (type.getSuperclass() != null) {
                fields = getAllFields(fields, type.getSuperclass());
@@ -172,11 +184,14 @@ public class Objeto{
           }
           return o2;
      }
-     
+
      @SafeVarargs
-     public static <E> E coalesce(E ...itens) {
-          for(E i : itens) if(Objeto.notBlank(i)) return i;
+     public static <E> E coalesce(E... itens) {
+
+          for (E i : itens)
+               if (Objeto.notBlank(i))
+                    return i;
           return null;
-      }
+     }
 
 }

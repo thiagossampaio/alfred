@@ -18,7 +18,7 @@ import br.com.twsoftware.alfred.object.Objeto;
 public class ObjetoTest{
 
      @Test
-     public void testaNulos() {
+     public void testaNulos() { 
 
           List<String> list = new ArrayList<String>();
           list.add("thiago");
@@ -36,15 +36,18 @@ public class ObjetoTest{
           Assert.assertTrue(Objeto.isBlank(""));
           Assert.assertTrue(Objeto.isBlank(new ArrayList<String>()));
           Assert.assertTrue(Objeto.isBlank(new HashMap<String, String>()));
+          
           Assert.assertTrue(Objeto.isBlank(new PessoaTest()));
           Assert.assertTrue(Objeto.isBlank(new PessoaTest("", null)));
           Assert.assertTrue(Objeto.isBlank(new PessoaTest(null, null)));
           Assert.assertTrue(Objeto.isBlank(new PessoaTest(null, ""), new ArrayList<String>()));
+          Assert.assertTrue(Objeto.isBlank(new PessoaTest(null, null, new PessoaTest("nome", "email"))));
+          Assert.assertTrue(Objeto.notBlank(new PessoaTest("nome", null, new PessoaTest("nome", "email"))));
           Assert.assertTrue(Objeto.isBlank(null, "", new PessoaTest("", ""), null));
           Assert.assertTrue(Objeto.isBlank("", null, new ArrayList<String>(), new PessoaTest()));
+          
           Assert.assertTrue(Objeto.isBlank(null, new String[] { "", null }));
           Assert.assertTrue(Objeto.isBlank(null, new Integer[] { null, null }));
-
           Assert.assertTrue(Objeto.notBlank(1));
           Assert.assertTrue(Objeto.notBlank("teste"));
           Assert.assertTrue(Objeto.notBlank("list"));
