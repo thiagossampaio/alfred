@@ -22,18 +22,7 @@ import br.com.twsoftware.alfred.excecoes.ExcecaoUtil;
 public class Reflexao {
 	@SuppressWarnings("unchecked")
 	private static Map<String, Class> mapaDeClasses;
-	private static Map<String, Map<String, Method>> mapaDeSets;
-	private static Map<String, Map<String, Method>> mapaDeGets;
 
-	/**
-	 * @return Returns the mapaDeSets.
-	 */
-	private static final Map<String, Map<String, Method>> getMapaDeSets() {
-		if (mapaDeSets == null) {
-			mapaDeSets = new HashMap<String, Map<String, Method>>();
-		}
-		return mapaDeSets;
-	}
 
 	/**
 	 * Retorna o valor do atributo separado por seus v�rios n�veis. Por exemplo:
@@ -251,29 +240,12 @@ public class Reflexao {
 	}
 
 	/**
-	 * @return Returns the mapaDeGets.
-	 */
-	private static final Map<String, Map<String, Method>> getMapaDeGets() {
-		if (mapaDeGets == null) {
-			mapaDeGets = new HashMap<String, Map<String, Method>>();
-		}
-		return mapaDeGets;
-	}
-
-	/**
 	 * @param objeto
 	 * @param nomeDoCampo
 	 * @return
 	 */
 	private static final Method getMetodoGet(Object objeto, String nomeDoCampo) {
-		Map<String, Method> getsDaClasse = getGetsDaClasse(objeto.getClass()
-				.getName());
-		Method metodoSet = getsDaClasse.get(nomeDoCampo);
-		if (metodoSet == null) {
-			metodoSet = criaMetodoGetDoAtributo(objeto, nomeDoCampo);
-			getsDaClasse.put(nomeDoCampo, metodoSet);
-		}
-		return metodoSet;
+		return criaMetodoGetDoAtributo(objeto, nomeDoCampo);
 	}
 
 	/**
@@ -285,19 +257,6 @@ public class Reflexao {
 			String nomeDoCampo) {
 		return criaMetodo(objeto.getClass(), getNomeDoMetodoGet(nomeDoCampo),
 				null);
-	}
-
-	/**
-	 * @param name
-	 * @return
-	 */
-	private static final Map<String, Method> getGetsDaClasse(String nomeDoCampo) {
-		Map<String, Method> getsDaClasse = getMapaDeGets().get(nomeDoCampo);
-		if (getsDaClasse == null) {
-			getsDaClasse = new HashMap<String, Method>();
-			getMapaDeGets().put(nomeDoCampo, getsDaClasse);
-		}
-		return getsDaClasse;
 	}
 
 	/**
@@ -329,17 +288,11 @@ public class Reflexao {
 	@SuppressWarnings("unchecked")
 	public static final Method getMetodoSet(Object objetoDestino,
 			String nomeDoCampo) {
-		Map<String, Method> setsDaClasse = getSetsDaClasse(objetoDestino
-				.getClass());
-		Method metodo = setsDaClasse.get(nomeDoCampo);
-		if (metodo == null) {
-			Class classeDoParametro = descobreClasseDoParametro(objetoDestino,
+		Class classeDoParametro = descobreClasseDoParametro(objetoDestino,
 					nomeDoCampo);
-			metodo = criaMetodoSetDoAtributo(objetoDestino, nomeDoCampo,
-					classeDoParametro);
-			setsDaClasse.put(nomeDoCampo, metodo);
-		}
-		return metodo;
+			
+		return criaMetodoSetDoAtributo(objetoDestino, nomeDoCampo,
+				classeDoParametro);
 	}
 
 	/**
@@ -390,20 +343,6 @@ public class Reflexao {
 			throw new RuntimeException(e);
 		}
 		return metodo;
-	}
-
-	/**
-	 * @param classe
-	 * @return
-	 */
-	@SuppressWarnings("unchecked")
-	private static final Map<String, Method> getSetsDaClasse(Class classe) {
-		Map<String, Method> setsDaClasse = getMapaDeSets().get(classe);
-		if (setsDaClasse == null) {
-			setsDaClasse = new HashMap<String, Method>();
-			getMapaDeSets().put(classe.getName(), setsDaClasse);
-		}
-		return setsDaClasse;
 	}
 
 	public static boolean existeGet(Object objeto, String nomeDoAtributo) {
