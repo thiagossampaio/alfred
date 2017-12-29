@@ -17,10 +17,11 @@
 package br.com.twsoftware.alfred.testes.email;
 
 
-import org.junit.Assert;
-import org.junit.Test;
+import static br.com.twsoftware.alfred.email.Email.isValido;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
-import br.com.twsoftware.alfred.email.Email;
+import org.junit.Test;
 
 /**
  * Classe de Teste para E-mails.
@@ -35,26 +36,23 @@ public class EmailTest {
 	 */
 	@Test
 	public void testarEmailInvalido() {
-		if ( !Email.isValido("123marlon123@teste.com") )
-			Assert.fail();
-		if ( Email.isValido("marlon=@t.com") )
-			Assert.fail();
-		if ( Email.isValido("marlon") )
-			Assert.fail();
-		if ( ! Email.isValido("marlon.carvalho@gmail.com") )
-			Assert.fail();
-		if ( Email.isValido("marlon.carvalhogmail.com") )
-			Assert.fail();
-		if ( Email.isValido("marlon@g@g.com") )
-			Assert.fail();
-		if ( Email.isValido("marlong@g....com") )
-			Assert.fail();
-		if ( Email.isValido("marlon@.com") )
-			Assert.fail();
-		if ( Email.isValido("marlon@ccom") )
-			Assert.fail();
-		if ( Email.isValido("asf@1.com") )
-			Assert.fail();
+	     
+	     //Válidos
+		assertTrue(isValido("123marlon123@teste.com"));
+		assertTrue(isValido("marlon.carvalho@gmail.com"));
+		
+		//Invalido
+		assertFalse(isValido("marlon=@t.com"));
+		assertFalse(isValido("marlon"));
+		assertFalse(isValido("marlon.carvalhogmail.com"));
+		assertFalse(isValido("marlon@g@g.com"));
+		assertFalse(isValido("marlong@g....com"));
+		assertFalse(isValido("marlon@.com"));
+		assertFalse(isValido("marlon@ccom"));
+		assertFalse(isValido("asf@1.com"));
+		
+		
+		
 	}
 
 }
