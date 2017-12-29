@@ -20,7 +20,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Classe utilit�ria para Emails.
+ * Classe utilitï¿½ria para Emails.
  * 
  * @author Marlon Silva Carvalho
  * @since 03/06/2009
@@ -31,19 +31,24 @@ final public class Email {
 	}
 
 	/**
-	 * Verificar se um e-mail � v�lido.
+	 * Verificar se um e-mail ï¿½ vï¿½lido.
 	 * 
 	 * @param email E-mail a ser validado.
-	 * @return Verdadeiro caso seja v�lido. Falso, caso contr�rio.
+	 * @return Verdadeiro caso seja vï¿½lido. Falso, caso contrï¿½rio.
 	 */
 	public static boolean isValido(String email) {
-		Pattern pattern = Pattern.compile (
-		         "([a-zA-Z0-9_\\-\\.]+)@((\\[a-z]{1,3}\\.[a-z]"
-		         + "{1,3}\\.[a-z]{1,3}\\.)|(([a-zA-Z\\-]+\\.)+))"
-		         + "([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)", 
-		         Pattern.MULTILINE);
-		Matcher m=pattern.matcher(email);
+//		Pattern pattern = Pattern.compile (
+//		         "([a-zA-Z0-9_\\-\\.]+)@((\\[a-z]{1,3}\\.[a-z]"
+//		         + "{1,3}\\.[a-z]{1,3}\\.)|(([a-zA-Z\\-]+\\.)+))"
+//		         + "([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)", 
+//		         Pattern.MULTILINE);
+		Pattern pattern = Pattern.compile("^([\\w-]+){1}([\\w-\\.]+){1,62}([\\w-]+){1}@([\\w&&[^_]]+){2,255}.[a-z]{2,}$");
+//		Pattern pattern = Pattern.compile("^([\\w-\\.]+){1,64}@([\\w&&[^_]]+){2,255}.[a-z]{2,}$");
+//		Pattern pattern = Pattern.compile("^[\\w-\\+]+(\\.[\\w]+)*@[\\w-]+(\\.[\\w]+)*(\\.[a-zA-Z]{2,})$");
+		
+//		^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$
+		
+		Matcher m = pattern.matcher(email);
 		return m.matches();
 	}
-
 }
