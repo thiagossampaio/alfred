@@ -47,13 +47,4 @@ final public class Email {
 		
 		return m.matches();
 	}
-	
-	public static void main(String[] args) {
-
-//	     String email = "teste.@gmail.com";
-//	     String[] split = email.split("@");
-//	     String part = split[0];
-//	     String test = part.substring(part.length() - 1);
-//	     System.out.println("Test: " + test);
-     }
 }
