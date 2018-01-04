@@ -17,10 +17,11 @@
 package br.com.twsoftware.alfred.testes.email;
 
 
-import org.junit.Assert;
-import org.junit.Test;
+import static br.com.twsoftware.alfred.email.Email.isValido;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
-import br.com.twsoftware.alfred.email.Email;
+import org.junit.Test;
 
 /**
  * Classe de Teste para E-mails.
@@ -34,83 +35,44 @@ public class EmailTest {
 	 * Testar e-mails inválidos.
 	 */
 	@Test
-	public void testarEmailInvalido() {
-	     
-		if ( Email.isValido("marlon=@t.com") )
-			Assert.fail();
-		if ( Email.isValido("marlon=@gmail.com") )
-               Assert.fail();
-		if ( Email.isValido("Abc.example.com") )
-			Assert.fail();
-		if ( Email.isValido("marlon.carvalhogmail.com") )
-			Assert.fail();
-		if ( Email.isValido("marlon@g@g.com") )
-			Assert.fail();
-		if ( Email.isValido("marlong@g....com") )
-			Assert.fail();
-		if ( Email.isValido("marlon@.com") )
-			Assert.fail();
-		if ( Email.isValido("marlon@ccom") )
-			Assert.fail();
-		if ( Email.isValido("asf@1.com") )
-			Assert.fail();
-		if ( Email.isValido(".asf@test.com") )
-               Assert.fail();
-		if ( Email.isValido("asf.@test.com") )
-               Assert.fail();
-		if ( Email.isValido(".asf.@test.com") )
-               Assert.fail();
-		if ( Email.isValido("=marlon=@t.com") )
-               Assert.fail();
-		if ( Email.isValido("=marlon@t.com") )
-               Assert.fail();
-		if ( Email.isValido("A@b@c@example.com") )
-		     Assert.fail();
-		if ( Email.isValido("1234567890123456789012345678901234567890123456789012345678901234+x@example.com") )
-		     Assert.fail();
-		if ( Email.isValido("john..doe@example.com") )
-		     Assert.fail();
-//		if ( Email.isValido("example@localhost") )
-//		     Assert.fail();
-//		if ( Email.isValido("admin@mailserver1") )
-//             Assert.fail();
-	}
-	
-//	@Test
-	public void testarEmailValido() {
-	     
-	   //Emails válidos
-          if ( !Email.isValido("123marlon123@teste.com") )
-               Assert.fail();
-          if ( !Email.isValido("www.thebest@gmail.com") )
-               Assert.fail();
-          if ( !Email.isValido("m.a.r.l.o.n@gmail.com") )
-               Assert.fail();
-          if ( !Email.isValido("m.a.r.l.o.n-test@gmail.com") )
-               Assert.fail();
-          if ( !Email.isValido("m.a.r.l.o.n_test@gmail.com") )
-               Assert.fail();
-          if ( !Email.isValido("m.a.r.l.o.n-test_te@gmail.com") )
-               Assert.fail();
-          if ( !Email.isValido("marlon@gmail.com") )
-               Assert.fail();
-          if ( !Email.isValido("marlon.carvalho@gmail.com") )
-               Assert.fail();
-          if ( !Email.isValido("other.email-with-dash@example.com") )
-               Assert.fail();
-          if ( !Email.isValido("user@localserver") )
-               Assert.fail();
-          
-        //Não validados
-//        if ( !Email.isValido("example@s.solutions") )
-//             Assert.fail();
-//        if ( !Email.isValido("admin@mailserver1") )
-//             Assert.fail();
-//        if ( !Email.isValido("x@example.com") )
-//             Assert.fail();
-//        if ( !Email.isValido("disposable.style.email.with+symbol@example.com") )
-//             Assert.fail();
-          
-	}
+	public void testEmails() {
 
+		//Válidos
+          assertTrue(isValido("123marlon123@teste.com"));
+          assertTrue(isValido("marlon.carvalho@gmail.com"));
+          assertTrue(isValido("123marlon123@teste.com"));
+          assertTrue(isValido("www.thebest@gmail.com"));
+          assertTrue(isValido("m.a.r.l.o.n@gmail.com"));
+          assertTrue(isValido("m.a.r.l.o.n-test@gmail.com"));
+          assertTrue(isValido("m.a.r.l.o.n_test@gmail.com"));
+          assertTrue(isValido("m.a.r.l.o.n-test_te@gmail.com"));
+          assertTrue(isValido("marlon@gmail.com"));
+          assertTrue(isValido("marlon.carvalho@gmail.com"));
+          assertTrue(isValido("other.email-with-dash@example.com"));
+          assertTrue(isValido("asf@1.com"));
+          assertTrue(isValido("example@s.solutions"));
+          assertTrue(isValido("x@example.com"));
+          
+          //Inválidos
+          assertFalse(isValido("A@b@c@example.com"));
+          assertFalse(isValido("marlon@g@g.com"));
+          assertFalse(isValido("marlong@g....com"));
+          assertFalse(isValido("marlon@.com"));
+          assertFalse(isValido("marlon@ccom"));
+          assertFalse(isValido("marlon=@t.com"));
+          assertFalse(isValido("marlon=@gmail.com"));
+          assertFalse(isValido("Abc.example.com"));
+          assertFalse(isValido("marlon.carvalhogmail.com"));
+          assertFalse(isValido("=marlon=@t.com"));
+          assertFalse(isValido("=marlon@t.com"));
+          assertFalse(isValido("admin@mailserver1"));
+          assertFalse(isValido(".asf@test.com"));
+          assertFalse(isValido(".asf.@test.com"));
+          assertFalse(isValido("asf.@test.com"));
+          assertFalse(isValido("user@localserver"));
+          assertFalse(isValido("john..doe@example.com"));
+          assertFalse(isValido("example@localhost"));
+          assertFalse(isValido("example?@localhost"));
+          
+	}
 }

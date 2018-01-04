@@ -16,6 +16,9 @@
  */
 package br.com.twsoftware.alfred.email;
 
+import static br.com.twsoftware.alfred.email.Email.isValido;
+import static org.junit.Assert.assertTrue;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -37,18 +40,20 @@ final public class Email {
 	 * @return Verdadeiro caso seja vï¿½lido. Falso, caso contrï¿½rio.
 	 */
 	public static boolean isValido(String email) {
-//		Pattern pattern = Pattern.compile (
-//		         "([a-zA-Z0-9_\\-\\.]+)@((\\[a-z]{1,3}\\.[a-z]"
-//		         + "{1,3}\\.[a-z]{1,3}\\.)|(([a-zA-Z\\-]+\\.)+))"
-//		         + "([a-zA-Z]{2,4}|[0-9]{1,3})(\\]?)", 
-//		         Pattern.MULTILINE);
-		Pattern pattern = Pattern.compile("^([\\w-]+){1}([\\w-\\.]+){1,62}([\\w-]+){1}@([\\w&&[^_]]+){2,255}.[a-z]{2,}$");
-//		Pattern pattern = Pattern.compile("^([\\w-\\.]+){1,64}@([\\w&&[^_]]+){2,255}.[a-z]{2,}$");
-//		Pattern pattern = Pattern.compile("^[\\w-\\+]+(\\.[\\w]+)*@[\\w-]+(\\.[\\w]+)*(\\.[a-zA-Z]{2,})$");
+
+	     Pattern pattern = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+	     
+	     Matcher m = pattern.matcher(email);
 		
-//		^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$
-		
-		Matcher m = pattern.matcher(email);
 		return m.matches();
 	}
+	
+	public static void main(String[] args) {
+
+//	     String email = "teste.@gmail.com";
+//	     String[] split = email.split("@");
+//	     String part = split[0];
+//	     String test = part.substring(part.length() - 1);
+//	     System.out.println("Test: " + test);
+     }
 }
