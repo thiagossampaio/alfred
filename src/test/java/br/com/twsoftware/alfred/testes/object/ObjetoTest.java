@@ -72,6 +72,11 @@ public class ObjetoTest{
           
 
      }
+     
+     @Test
+     public void primitiveArrays() {
+          Assert.assertFalse(Objeto.isBlank(new boolean[]{ true, false}));
+     }
 
      @Test
      public void testaOr() {

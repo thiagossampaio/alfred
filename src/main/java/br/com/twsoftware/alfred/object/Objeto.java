@@ -3,6 +3,8 @@ package br.com.twsoftware.alfred.object;
 
 import java.lang.reflect.Array;
 import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -79,15 +81,23 @@ public class Objeto{
                boolean existeGetters = false;
                boolean nulo = true;
 
-               List<Field> fields = new ArrayList<Field>();
-               getAllFields(fields, obj.getClass());
+               List<Method> methods = new ArrayList<Method>();
+               getAllMethods(methods, obj.getClass());
 
-               for (Field field : fields) {
-                    if (Reflexao.existeGet(obj, field.getName())) {
+               List<String> getMethods = new ArrayList<String>();
+
+               getAllFields(new ArrayList<>(), obj.getClass()).forEach(a -> {
+                    getMethods.add(Reflexao.getNomeDoMetodoGet(a.getName()));
+               });
+
+               for (Method method : methods) {
+                    if ((Modifier.isPublic(method.getModifiers())) && getMethods.contains(method.getName())) {
                          existeGetters = true;
-                         if (notBlank(Reflexao.getValorDoAtributo(obj, field.getName()))) {
+                         if (notBlank(method.invoke(obj, null))) {
                               nulo = false;
                               break;
+                         } else {
+                              getMethods.remove(method.getName());
                          }
                     }
                }
@@ -102,6 +112,17 @@ public class Objeto{
 
           return false;
 
+     }
+
+     public static List<Method> getAllMethods(List<Method> fields, Class<?> type) {
+
+          fields.addAll(Arrays.asList(type.getDeclaredMethods()));
+
+          if (!Object.class.equals(type.getSuperclass())) {
+               fields = getAllMethods(fields, type.getSuperclass());
+          }
+
+          return fields;
      }
 
      public static List<Field> getAllFields(List<Field> fields, Class<?> type) {

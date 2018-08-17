@@ -65,7 +65,7 @@ public class Reflexao {
 		return nomeBaseDoMetodo;
 	}
 
-	private static final String getNomeDoMetodoGet(String nomeDoAtributo) {
+	public static final String getNomeDoMetodoGet(String nomeDoAtributo) {
 		return "get" + getNomeBaseDoMetodo(nomeDoAtributo);
 	}
 
