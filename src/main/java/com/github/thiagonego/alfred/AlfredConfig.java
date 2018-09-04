@@ -1,4 +1,4 @@
-package br.com.twsoftware.alfred;
+package com.github.thiagonego.alfred;
 
 import java.net.InetSocketAddress;
 import java.net.Proxy;

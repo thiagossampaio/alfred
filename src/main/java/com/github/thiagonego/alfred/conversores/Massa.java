@@ -14,7 +14,7 @@
  *  You should have received a copy of the GNU General Public License
  *  along with Alfred Library.  If not, see <http://www.gnu.org/licenses/>.
  */
-package br.com.twsoftware.alfred.conversores;
+package com.github.thiagonego.alfred.conversores;
 
 /**
  * Classe para convers�o entre medidas de massa.

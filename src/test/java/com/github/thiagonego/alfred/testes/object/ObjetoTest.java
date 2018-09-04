@@ -1,5 +1,5 @@
 
-package br.com.twsoftware.alfred.testes.object;
+package com.github.thiagonego.alfred.testes.object;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -13,7 +13,7 @@ import junit.framework.Assert;
 
 import org.junit.Test;
 
-import br.com.twsoftware.alfred.object.Objeto;
+import com.github.thiagonego.alfred.object.Objeto;
 
 public class ObjetoTest{
 

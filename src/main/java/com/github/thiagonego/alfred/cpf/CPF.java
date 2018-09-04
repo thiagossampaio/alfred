@@ -14,10 +14,10 @@
  *  You should have received a copy of the GNU General Public License
  *  along with Alfred Library.  If not, see <http://www.gnu.org/licenses/>.
  */
-package br.com.twsoftware.alfred.cpf;
+package com.github.thiagonego.alfred.cpf;
 
-import br.com.twsoftware.alfred.AlfredException;
-import br.com.twsoftware.alfred.numeros.Numeros;
+import com.github.thiagonego.alfred.AlfredException;
+import com.github.thiagonego.alfred.numeros.Numeros;
 
 /**
  * Utilit�rios para CPF.

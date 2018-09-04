@@ -14,13 +14,13 @@
  *  You should have received a copy of the GNU General Public License
  *  along with Alfred Library.  If not, see <http://www.gnu.org/licenses/>.
  */
-package br.com.twsoftware.alfred.testes.conversores;
+package com.github.thiagonego.alfred.testes.conversores;
 
 import junit.framework.Assert;
 
 import org.junit.Test;
 
-import br.com.twsoftware.alfred.conversores.Massa;
+import com.github.thiagonego.alfred.conversores.Massa;
 
 /**
  * Classe de Teste para convers�o de massa.

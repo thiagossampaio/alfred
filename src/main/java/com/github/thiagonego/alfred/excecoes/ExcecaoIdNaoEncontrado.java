@@ -2,7 +2,7 @@
  * Created by Luiz Carlos G. Reis
  * Created on 29/04/2004
  */
-package br.com.twsoftware.alfred.excecoes;
+package com.github.thiagonego.alfred.excecoes;
 
 /**
  * @author Luiz Carlos G. Reis

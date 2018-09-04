@@ -3,7 +3,7 @@
  * Created on Nov 8, 2004
  *
  */
-package br.com.twsoftware.alfred.extenso;
+package com.github.thiagonego.alfred.extenso;
 
 import java.util.StringTokenizer;
 

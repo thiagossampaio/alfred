@@ -14,7 +14,7 @@
  *  You should have received a copy of the GNU General Public License
  *  along with Alfred Library.  If not, see <http://www.gnu.org/licenses/>.
  */
-package br.com.twsoftware.alfred.io;
+package com.github.thiagonego.alfred.io;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -27,7 +27,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-import br.com.twsoftware.alfred.AlfredException;
+import com.github.thiagonego.alfred.AlfredException;
 
 
 /**

@@ -1,4 +1,4 @@
-package br.com.twsoftware.alfred.html;
+package com.github.thiagonego.alfred.html;
 
 import java.util.HashMap;
 import java.util.Iterator;

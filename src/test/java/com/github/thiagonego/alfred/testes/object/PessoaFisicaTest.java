@@ -1,5 +1,5 @@
 
-package br.com.twsoftware.alfred.testes.object;
+package com.github.thiagonego.alfred.testes.object;
 
 public class PessoaFisicaTest extends PessoaTest{
 

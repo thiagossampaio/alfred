@@ -14,13 +14,13 @@
  *  You should have received a copy of the GNU General Public License
  *  along with Alfred Library.  If not, see <http://www.gnu.org/licenses/>.
  */
-package br.com.twsoftware.alfred.testes.numeros;
+package com.github.thiagonego.alfred.testes.numeros;
 
 import junit.framework.Assert;
 
 import org.junit.Test;
 
-import br.com.twsoftware.alfred.numeros.Numeros;
+import com.github.thiagonego.alfred.numeros.Numeros;
 
 /**
  * Classe de teste para o utilit�rio de Numeros.

@@ -14,7 +14,7 @@
  *  You should have received a copy of the GNU General Public License
  *  along with Alfred Library.  If not, see <http://www.gnu.org/licenses/>.
  */
-package br.com.twsoftware.alfred.testes.data;
+package com.github.thiagonego.alfred.testes.data;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -24,7 +24,7 @@ import junit.framework.Assert;
 
 import org.junit.Test;
 
-import br.com.twsoftware.alfred.data.CalculoData;
+import com.github.thiagonego.alfred.data.CalculoData;
 
 /**
  * Testar classe de utilit�ria de soma de dias.

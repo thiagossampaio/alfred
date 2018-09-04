@@ -1,4 +1,4 @@
-package br.com.twsoftware.alfred.excecoes;
+package com.github.thiagonego.alfred.excecoes;
 
 public class ExcecaoRegistroDuplicado extends ExcecaoPersistencia {
   /**

@@ -1,5 +1,5 @@
 
-package br.com.twsoftware.alfred.io;
+package com.github.thiagonego.alfred.io;
 
 import java.io.BufferedInputStream;
 import java.io.ByteArrayOutputStream;
@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
-import br.com.twsoftware.alfred.object.Objeto;
+import com.github.thiagonego.alfred.object.Objeto;
 
 public class ZipPack{
 
@@ -130,12 +130,10 @@ public class ZipPack{
           }
 
      }
-
+     
      /**
       * Packs the given directory.
       * 
-      * @param directoryPath
-      * - the directory that is going to be packed
       * @throws IOException
       */
      public void packDirectory() throws IOException {

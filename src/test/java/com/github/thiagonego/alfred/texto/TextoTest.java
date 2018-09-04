@@ -1,6 +1,8 @@
-package br.com.twsoftware.alfred.texto;
+package com.github.thiagonego.alfred.texto;
 
 import org.junit.Test;
+
+import com.github.thiagonego.alfred.texto.Texto;
 
 import junit.framework.Assert;
 

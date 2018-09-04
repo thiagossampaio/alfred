@@ -1,7 +1,7 @@
 /*
  * Created on 15/04/2005
  */
-package br.com.twsoftware.alfred.excecoes;
+package com.github.thiagonego.alfred.excecoes;
 
 public class ExcecaoDeNegocio extends RuntimeException {
 

@@ -14,7 +14,7 @@
  *  You should have received a copy of the GNU General Public License
  *  along with Alfred Library.  If not, see <http://www.gnu.org/licenses/>.
  */
-package br.com.twsoftware.alfred.net;
+package com.github.thiagonego.alfred.net;
 
 import java.io.BufferedReader;
 import java.io.DataInputStream;
@@ -28,8 +28,8 @@ import java.net.URLConnection;
 import java.net.URLEncoder;
 import java.util.Map;
 
-import br.com.twsoftware.alfred.AlfredConfig;
-import br.com.twsoftware.alfred.AlfredException;
+import com.github.thiagonego.alfred.AlfredConfig;
+import com.github.thiagonego.alfred.AlfredException;
 
 
 /**

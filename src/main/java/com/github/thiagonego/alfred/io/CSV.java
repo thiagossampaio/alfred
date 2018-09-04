@@ -1,4 +1,4 @@
-package br.com.twsoftware.alfred.io;
+package com.github.thiagonego.alfred.io;
 
 import java.util.ArrayList;
 import java.util.List;

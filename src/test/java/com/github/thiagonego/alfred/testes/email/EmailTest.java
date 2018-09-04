@@ -14,10 +14,10 @@
  *  You should have received a copy of the GNU General Public License
  *  along with Alfred Library.  If not, see <http://www.gnu.org/licenses/>.
  */
-package br.com.twsoftware.alfred.testes.email;
+package com.github.thiagonego.alfred.testes.email;
 
 
-import static br.com.twsoftware.alfred.email.Email.isValido;
+import static com.github.thiagonego.alfred.email.Email.isValido;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 

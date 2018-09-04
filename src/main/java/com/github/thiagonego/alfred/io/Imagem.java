@@ -14,7 +14,7 @@
  *  You should have received a copy of the GNU General Public License
  *  along with Alfred Library.  If not, see <http://www.gnu.org/licenses/>.
  */
-package br.com.twsoftware.alfred.io;
+package com.github.thiagonego.alfred.io;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -31,7 +31,7 @@ import javax.imageio.ImageIO;
 
 import javax.swing.ImageIcon;
 
-import br.com.twsoftware.alfred.AlfredException;
+import com.github.thiagonego.alfred.AlfredException;
 
 
 /**

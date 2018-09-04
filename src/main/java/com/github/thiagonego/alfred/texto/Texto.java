@@ -15,7 +15,7 @@
  *  along with Alfred Library.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package br.com.twsoftware.alfred.texto;
+package com.github.thiagonego.alfred.texto;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -29,9 +29,9 @@ import java.util.regex.Pattern;
 
 import javax.swing.text.MaskFormatter;
 
-import br.com.twsoftware.alfred.numeros.Numeros;
-import br.com.twsoftware.alfred.object.Objeto;
-import br.com.twsoftware.alfred.telefones.Telefones;
+import com.github.thiagonego.alfred.numeros.Numeros;
+import com.github.thiagonego.alfred.object.Objeto;
+import com.github.thiagonego.alfred.telefones.Telefones;
 
 /**
  * Utilit�rios para manipula��o de Textos.
@@ -490,7 +490,7 @@ public class Texto{
      /**
       * M�todo que remove a m�scara de um processo.
       * 
-      * @param String
+      * @param processo
       * @return
       */
      public static String limpaMascaraProcesso(String processo) {

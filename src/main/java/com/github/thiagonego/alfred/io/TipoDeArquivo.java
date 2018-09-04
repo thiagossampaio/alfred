@@ -1,4 +1,4 @@
-package br.com.twsoftware.alfred.io;
+package com.github.thiagonego.alfred.io;
 
 public enum TipoDeArquivo {
   GIF("image/gif"), JPG("image/jpeg"), JPEG("image/pjpeg"), DOC(

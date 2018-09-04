@@ -1,7 +1,7 @@
 /*
  * Created on 23/06/2005
  */
-package br.com.twsoftware.alfred.excecoes;
+package com.github.thiagonego.alfred.excecoes;
 
 public class ExcecaoRelatorioJasper extends ExcecaoRelatorio {
   private static final long serialVersionUID = 3546641005827600436L;

@@ -14,9 +14,9 @@
  *  You should have received a copy of the GNU General Public License
  *  along with Alfred Library.  If not, see <http://www.gnu.org/licenses/>.
  */
-package br.com.twsoftware.alfred.conversores;
+package com.github.thiagonego.alfred.conversores;
 
-import br.com.twsoftware.alfred.AlfredException;
+import com.github.thiagonego.alfred.AlfredException;
 
 /**
  * Classe utilit�ria para convers�o de temperaturas.

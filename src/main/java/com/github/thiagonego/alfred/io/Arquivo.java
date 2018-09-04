@@ -14,7 +14,7 @@
  *  You should have received a copy of the GNU General Public License
  *  along with Alfred Library.  If not, see <http://www.gnu.org/licenses/>.
  */
-package br.com.twsoftware.alfred.io;
+package com.github.thiagonego.alfred.io;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -38,11 +38,11 @@ import java.util.Collection;
 import java.util.List;
 import java.util.Vector;
 
-import br.com.twsoftware.alfred.AlfredException;
-import br.com.twsoftware.alfred.excecoes.ExcecaoArquivoNaoEncontrado;
-import br.com.twsoftware.alfred.excecoes.ExcecaoClasseNaoEncontrada;
-import br.com.twsoftware.alfred.excecoes.ExcecaoErroDeEntradaESaidaDeArquivo;
-import br.com.twsoftware.alfred.texto.Texto;
+import com.github.thiagonego.alfred.AlfredException;
+import com.github.thiagonego.alfred.excecoes.ExcecaoArquivoNaoEncontrado;
+import com.github.thiagonego.alfred.excecoes.ExcecaoClasseNaoEncontrada;
+import com.github.thiagonego.alfred.excecoes.ExcecaoErroDeEntradaESaidaDeArquivo;
+import com.github.thiagonego.alfred.texto.Texto;
 
 
 /**
@@ -226,14 +226,14 @@ final public class Arquivo {
 			}
 		}
 	}
-
+	
 	/**
-	 * @return: StringBuilder
+	 * 
 	 * @param nomeDoArquivo
+	 * @return
 	 * @throws ExcecaoErroDeEntradaESaidaDeArquivo
 	 */
-	public static StringBuilder getStringDoArquivo(String nomeDoArquivo)
-			throws ExcecaoErroDeEntradaESaidaDeArquivo {
+	public static StringBuilder getStringDoArquivo(String nomeDoArquivo) throws ExcecaoErroDeEntradaESaidaDeArquivo {
 		String quebraDeLinha = System.getProperty("line.separator");
 		StringBuilder sb = new StringBuilder();
 		BufferedReader br = null;
@@ -297,7 +297,6 @@ final public class Arquivo {
 	}	
 	
 	/**
-	 * @return: void
 	 * @param arquivoDeOrigem
 	 * @param arquivoDestino
 	 */
@@ -311,7 +310,7 @@ final public class Arquivo {
 			origem.renameTo(new File(arquivoDestino));
 		} catch (Exception ex) {
 			throw new RuntimeException(
-					"Nï¿½o foi possivel mover o arquivo "
+					"não foi possivel mover o arquivo "
 							+ arquivoDeOrigem
 							+ " para "
 							+ arquivoDestino
@@ -320,14 +319,13 @@ final public class Arquivo {
 	}	
 	
 	/**
-	 * @return: void
+	 * 
 	 * @param arquivoDeOrigem
 	 * @param arquivoDestino
 	 */
 	public static void copiaArquivo(String arquivoDeOrigem,
 			String arquivoDestino) {
 		try {
-			// Cï¿½digo do Tiago
 			FileChannel sourceChannel = new FileInputStream(arquivoDeOrigem)
 					.getChannel();
 			FileChannel destinationChannel = new FileOutputStream(
@@ -340,7 +338,7 @@ final public class Arquivo {
 			sourceChannel = null;
 			destinationChannel = null;
 		} catch (IOException ex) {
-			throw new RuntimeException("Nï¿½o foi possï¿½vel copiar o arquivo.");
+			throw new RuntimeException("não foi possï¿½vel copiar o arquivo.");
 		}
 	}	
 
@@ -364,7 +362,7 @@ final public class Arquivo {
 				out.flush();
 				out.close();
 			} catch (FileNotFoundException ex) {
-				throw new AlfredException("Arquivo nï¿½o encontrado! ", ex);
+				throw new AlfredException("Arquivo não encontrado! ", ex);
 			} catch (IOException ex) {
 				throw new AlfredException("Erro ao gravar o arquivo! ", ex);
 			}
@@ -393,7 +391,7 @@ final public class Arquivo {
 			out.flush();
 			out.close();
 		} catch (FileNotFoundException ex) {
-			throw new AlfredException("Arquivo nï¿½o encontrado! ", ex);
+			throw new AlfredException("Arquivo não encontrado! ", ex);
 		} catch (IOException ex) {
 			throw new AlfredException("Erro ao gravar o arquivo! ", ex);
 		}

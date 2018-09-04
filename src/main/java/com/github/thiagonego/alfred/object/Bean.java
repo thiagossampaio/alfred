@@ -1,4 +1,4 @@
-package br.com.twsoftware.alfred.object;
+package com.github.thiagonego.alfred.object;
 
 public class Bean {
 	public Integer inicio;

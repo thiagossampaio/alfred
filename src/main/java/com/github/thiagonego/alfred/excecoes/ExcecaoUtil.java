@@ -2,7 +2,7 @@
  * Created on 11/02/2005
  *
  */
-package br.com.twsoftware.alfred.excecoes;
+package com.github.thiagonego.alfred.excecoes;
 
 /**
  * @author luizcgr

@@ -14,7 +14,7 @@
  *  You should have received a copy of the GNU General Public License
  *  along with Alfred Library.  If not, see <http://www.gnu.org/licenses/>.
  */
-package br.com.twsoftware.alfred.testes.data;
+package com.github.thiagonego.alfred.testes.data;
 
 import java.text.DateFormatSymbols;
 import java.util.Calendar;
@@ -27,7 +27,7 @@ import junit.framework.Assert;
 
 import org.junit.Test;
 
-import br.com.twsoftware.alfred.data.Data;
+import com.github.thiagonego.alfred.data.Data;
 
 /**
  * Classe de Teste para Data.

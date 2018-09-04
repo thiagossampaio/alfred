@@ -14,14 +14,14 @@
  *  You should have received a copy of the GNU General Public License
  *  along with Alfred Library.  If not, see <http://www.gnu.org/licenses/>.
  */
-package br.com.twsoftware.alfred.testes.cnpj;
+package com.github.thiagonego.alfred.testes.cnpj;
 
 
 import org.junit.Assert;
 import org.junit.Test;
 
-import br.com.twsoftware.alfred.AlfredException;
-import br.com.twsoftware.alfred.cnpj.CNPJ;
+import com.github.thiagonego.alfred.AlfredException;
+import com.github.thiagonego.alfred.cnpj.CNPJ;
 
 /**
  * Classe de Teste para CNPJ.

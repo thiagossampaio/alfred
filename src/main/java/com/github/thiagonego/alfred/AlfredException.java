@@ -1,4 +1,4 @@
-package br.com.twsoftware.alfred;
+package com.github.thiagonego.alfred;
 
 @SuppressWarnings("serial")
 public class AlfredException extends RuntimeException {

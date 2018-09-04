@@ -1,8 +1,8 @@
-package br.com.twsoftware.alfred.hora;
+package com.github.thiagonego.alfred.hora;
 
 import java.util.StringTokenizer;
 
-import br.com.twsoftware.alfred.excecoes.ExcecaoUtil;
+import com.github.thiagonego.alfred.excecoes.ExcecaoUtil;
 
 
 /**

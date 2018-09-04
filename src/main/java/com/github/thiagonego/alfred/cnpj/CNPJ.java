@@ -14,10 +14,10 @@
  *  You should have received a copy of the GNU General Public License
  *  along with Alfred Library.  If not, see <http://www.gnu.org/licenses/>.
  */
-package br.com.twsoftware.alfred.cnpj;
+package com.github.thiagonego.alfred.cnpj;
 
-import br.com.twsoftware.alfred.AlfredException;
-import br.com.twsoftware.alfred.texto.Texto;
+import com.github.thiagonego.alfred.AlfredException;
+import com.github.thiagonego.alfred.texto.Texto;
 
 /**
  * Classe utilit�ria para CNPJ

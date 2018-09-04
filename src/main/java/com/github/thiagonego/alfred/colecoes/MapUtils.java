@@ -1,4 +1,4 @@
-package br.com.twsoftware.alfred.colecoes;
+package com.github.thiagonego.alfred.colecoes;
 
 import java.util.Collections;
 import java.util.Comparator;

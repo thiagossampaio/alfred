@@ -14,7 +14,7 @@
  *  You should have received a copy of the GNU General Public License
  *  along with Alfred Library.  If not, see <http://www.gnu.org/licenses/>.
  */
-package br.com.twsoftware.alfred.testes.colecoes;
+package com.github.thiagonego.alfred.testes.colecoes;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -24,7 +24,7 @@ import junit.framework.Assert;
 
 import org.junit.Test;
 
-import br.com.twsoftware.alfred.colecoes.Colecoes;
+import com.github.thiagonego.alfred.colecoes.Colecoes;
 
 /**
  * Testar utilit�rio de Cole��es.

@@ -14,11 +14,11 @@
  *  You should have received a copy of the GNU General Public License
  *  along with Alfred Library.  If not, see <http://www.gnu.org/licenses/>.
  */
-package br.com.twsoftware.alfred.telefones;
+package com.github.thiagonego.alfred.telefones;
 
 import java.util.regex.Pattern;
 
-import br.com.twsoftware.alfred.texto.Texto;
+import com.github.thiagonego.alfred.texto.Texto;
 
 
 /**

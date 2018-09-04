@@ -1,10 +1,11 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.thiagonego</groupId>
 	<artifactId>alfred</artifactId>
-	<version>1.3.8.1</version>
+	<version>1.4.0</version>
 	<packaging>jar</packaging>
 
 	<name>Suite de utilitário para qualquer código Java/Groovy</name>
@@ -14,19 +15,8 @@
 	<inceptionYear>2009</inceptionYear>
 
 	<properties>
-	
-		<!-- no arquivo de configurações do maven (~/.m2/settings.xml)  adicionar as seguintas configurações do server github
-			<settings>
-				<servers>
-					<server>
-						<id>github</id>
-						<username>YOUR-USERNAME</username>
-						<password>YOUR-PASSWORD</password>
-					</server>
-				</servers>
-			</settings>
-		-->
-		
+		<skipSite>false</skipSite>
+		<javadoc.opts>-Xdoclint:none</javadoc.opts>
 		<github.global.server>github</github.global.server>
 	</properties>
 
@@ -74,16 +64,19 @@
 	</contributors>
 
 	<scm>
-		<connection>https://github.com/thiagonego/alfred</connection>
-		<developerConnection>https://github.com/thiagonego/alfred</developerConnection>
+		<connection>scm:git:https://github.com/thiagonego/alfred</connection>
+		<developerConnection>scm:git:https://github.com/thiagonego/alfred</developerConnection>
 		<url>https://github.com/thiagonego/alfred.git</url>
 	</scm>
 
 	<distributionManagement>
+		<snapshotRepository>
+			<id>deploy</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
 		<repository>
-			<id>internal.repo</id>
-			<name>Temporary Staging Repository</name>
-			<url>file://${project.build.directory}/mvn-repo</url>
+			<id>deploy</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
 		</repository>
 	</distributionManagement>
 
@@ -94,6 +87,7 @@
 				<artifactId>site-maven-plugin</artifactId>
 				<version>0.11</version>
 				<configuration>
+					<skip>${skipSite}</skip>
 					<message>Maven artifacts for ${project.version}</message>  <!-- git commit message -->
 					<noJekyll>true</noJekyll>                                  <!-- disable webpage processing -->
 					<outputDirectory>${project.build.directory}/mvn-repo</outputDirectory> <!-- matches distribution management repository url above -->
@@ -105,7 +99,8 @@
 					<repositoryOwner>thiagonego</repositoryOwner>      <!-- github username -->
 				</configuration>
 				<executions>
-					<!-- run site-maven-plugin's 'site' target as part of the build's normal  'deploy' phase -->
+					<!-- run site-maven-plugin's 'site' target as part of the build's normal 
+						'deploy' phase -->
 					<execution>
 						<goals>
 							<goal>site</goal>
@@ -117,6 +112,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.8.0</version>
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
@@ -126,6 +122,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-source-plugin</artifactId>
+				<version>3.0.1</version>
 				<executions>
 					<execution>
 						<id>attach-sources</id>
@@ -134,7 +131,45 @@
 						</goals>
 					</execution>
 				</executions>
-			</plugin>			
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<version>1.6</version>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>3.0.1</version>
+				<configuration>
+					<additionalparam>${javadoc.opts}</additionalparam>
+				</configuration>
+				<executions>
+					<execution>
+						<id>attach-javadocs</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+						<configuration>
+							<additionalparam>${javadoc.opts}</additionalparam>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<version>2.7</version>
+			</plugin>
 		</plugins>
 	</build>
 
@@ -143,7 +178,17 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.10</version>
-		</dependency>		
+		</dependency>
 	</dependencies>
 
+	<profiles>
+		<profile>
+			<id>release</id>
+			<properties>
+				<skipSite>true</skipSite>
+			</properties>
+		</profile>
+	</profiles>
+
+	<url>https://github.com/thiagonego/alfred</url>
 </project>

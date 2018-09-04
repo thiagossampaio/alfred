@@ -14,7 +14,7 @@
  *  You should have received a copy of the GNU General Public License
  *  along with Alfred Library.  If not, see <http://www.gnu.org/licenses/>.
  */
-package br.com.twsoftware.alfred.data;
+package com.github.thiagonego.alfred.data;
 
 import java.sql.Time;
 import java.sql.Timestamp;
@@ -26,8 +26,8 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.Locale;
 
-import br.com.twsoftware.alfred.excecoes.ExcecaoUtil;
-import br.com.twsoftware.alfred.hora.Hora;
+import com.github.thiagonego.alfred.excecoes.ExcecaoUtil;
+import com.github.thiagonego.alfred.hora.Hora;
 
 
 /**

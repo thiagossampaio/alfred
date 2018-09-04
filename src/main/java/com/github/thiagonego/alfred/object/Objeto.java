@@ -1,5 +1,5 @@
 
-package br.com.twsoftware.alfred.object;
+package com.github.thiagonego.alfred.object;
 
 import java.lang.reflect.Array;
 import java.lang.reflect.Field;
@@ -11,8 +11,8 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
-import br.com.twsoftware.alfred.reflexao.Reflexao;
-import br.com.twsoftware.alfred.texto.Texto;
+import com.github.thiagonego.alfred.reflexao.Reflexao;
+import com.github.thiagonego.alfred.texto.Texto;
 
 public class Objeto{
 

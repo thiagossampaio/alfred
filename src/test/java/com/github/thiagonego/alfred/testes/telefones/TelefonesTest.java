@@ -14,13 +14,13 @@
  *  You should have received a copy of the GNU General Public License
  *  along with Alfred Library.  If not, see <http://www.gnu.org/licenses/>.
  */
-package br.com.twsoftware.alfred.testes.telefones;
+package com.github.thiagonego.alfred.testes.telefones;
 
 import junit.framework.Assert;
 
 import org.junit.Test;
 
-import br.com.twsoftware.alfred.telefones.Telefones;
+import com.github.thiagonego.alfred.telefones.Telefones;
 
 /**
  * Classe de Teste para Telefones.

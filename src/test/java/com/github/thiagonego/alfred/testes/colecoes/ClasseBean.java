@@ -1,4 +1,4 @@
-package br.com.twsoftware.alfred.testes.colecoes;
+package com.github.thiagonego.alfred.testes.colecoes;
 
 public class ClasseBean {
 	private String campo;

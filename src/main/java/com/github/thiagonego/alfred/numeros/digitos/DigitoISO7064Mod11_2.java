@@ -18,7 +18,7 @@
  * be used in advertising or otherwise to promote the sale, use or other dealings
  * in this Software without prior written authorization of the copyright holder. 
  */
-package br.com.twsoftware.alfred.numeros.digitos;
+package com.github.thiagonego.alfred.numeros.digitos;
 
 /**
  * Implements ISO 7064 Mod 11,2 check digit scheme.

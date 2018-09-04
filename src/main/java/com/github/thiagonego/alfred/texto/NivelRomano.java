@@ -1,4 +1,4 @@
-package br.com.twsoftware.alfred.texto;
+package com.github.thiagonego.alfred.texto;
 
 class NivelRomano {
   private String nivel_I;

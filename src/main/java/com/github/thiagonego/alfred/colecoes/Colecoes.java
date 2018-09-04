@@ -14,7 +14,7 @@
  *  You should have received a copy of the GNU General Public License
  *  along with Alfred Library.  If not, see <http://www.gnu.org/licenses/>.
  */
-package br.com.twsoftware.alfred.colecoes;
+package com.github.thiagonego.alfred.colecoes;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -24,8 +24,8 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 
-import br.com.twsoftware.alfred.AlfredException;
-import br.com.twsoftware.alfred.texto.Texto;
+import com.github.thiagonego.alfred.AlfredException;
+import com.github.thiagonego.alfred.texto.Texto;
 
 
 /**

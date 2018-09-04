@@ -1,7 +1,7 @@
 /*
  * Created on 19/05/2005
  */
-package br.com.twsoftware.alfred.excecoes;
+package com.github.thiagonego.alfred.excecoes;
 
 public class ExcecaoRelatorioVazio extends ExcecaoRelatorio {
   private static final long serialVersionUID = 3760845644914242359L;

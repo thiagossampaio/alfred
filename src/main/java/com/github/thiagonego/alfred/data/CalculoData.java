@@ -14,7 +14,7 @@
  *  You should have received a copy of the GNU General Public License
  *  along with Alfred Library.  If not, see <http://www.gnu.org/licenses/>.
  */
-package br.com.twsoftware.alfred.data;
+package com.github.thiagonego.alfred.data;
 
 import java.util.Calendar;
 import java.util.Date;

@@ -1,4 +1,4 @@
-package br.com.twsoftware.alfred.excecoes;
+package com.github.thiagonego.alfred.excecoes;
 
 public class ExcecaoDadosInconsistentes extends Excecao {
   private static final long serialVersionUID = 1L;

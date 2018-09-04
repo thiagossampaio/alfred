@@ -3,7 +3,7 @@
  *
  *Utilitï¿½rios para trabalhar com a API Reflection do Java.
  */
-package br.com.twsoftware.alfred.reflexao;
+package com.github.thiagonego.alfred.reflexao;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -12,7 +12,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.StringTokenizer;
 
-import br.com.twsoftware.alfred.excecoes.ExcecaoUtil;
+import com.github.thiagonego.alfred.excecoes.ExcecaoUtil;
 
 
 /**
@@ -29,9 +29,9 @@ public class Reflexao {
 	 * aluno.titular.nome; titulo.conta.agencia;
 	 * 
 	 * @param objeto
-	 *            Objeto do qual serï¿½ extraï¿½do o valor
+	 *            Objeto do qual será extraï¿½do o valor
 	 * @param atributo
-	 *            Atributo do objeto do qual serï¿½ extraï¿½do o valor
+	 *            Atributo do objeto do qual será extraï¿½do o valor
 	 * @return Valor do atributo
 	 */
 	public static Object getValorDoAtributoComposto(Object objeto,
@@ -222,7 +222,7 @@ public class Reflexao {
 	}
 
 	/**
-	 * @param visao
+	 * @param objetoDestino
 	 * @param nomeDoCampo
 	 * @param valor
 	 */
@@ -276,14 +276,14 @@ public class Reflexao {
 	}
 
 	/**
-	 * Retorna o descritor do mï¿½todo <code>set()</code> para um campo no objeto
+	 * Retorna o descritor do método <code>set()</code> para um campo no objeto
 	 * indicado.
 	 * 
 	 * @param objetoDestino
-	 *            O objeto de onde extrair o mï¿½todo
+	 *            O objeto de onde extrair o método
 	 * @param nomeDoCampo
-	 *            O nome do campo para o qual se deseja obter o mï¿½todo
-	 * @return O descritor do mï¿½todo <code>set()</code> para o campo no objeto.
+	 *            O nome do campo para o qual se deseja obter o método
+	 * @return O descritor do método <code>set()</code> para o campo no objeto.
 	 */
 	@SuppressWarnings("unchecked")
 	public static final Method getMetodoSet(Object objetoDestino,
@@ -360,17 +360,17 @@ public class Reflexao {
 	}
 
 	/**
-	 * Verifica se existe o mï¿½todo <code>set()</code> para o campo indicado.
-	 * Este mï¿½todo irï¿½ indicar que o campo nï¿½o existe se nï¿½o existir um mï¿½todo
+	 * Verifica se existe o método <code>set()</code> para o campo indicado.
+	 * Este método irá indicar que o campo não existe se não existir um método
 	 * <code>get()</code> equivalente para o campo.
 	 * 
 	 * @param objeto
-	 *            O objeto no qual serï¿½ verificada a existï¿½ncia do mï¿½todo
+	 *            O objeto no qual será verificada a existência do método
 	 * @param nomeDoCampo
-	 *            O nome do campo para o qual serï¿½ verificada a existï¿½ncia do
-	 *            mï¿½todo
-	 * @return <code>true</code> se existir um mï¿½todo <code>set()</code> vï¿½lido
-	 *         para o campo indicado; caso contrï¿½rio, retorna <code>false</code>
+	 *            O nome do campo para o qual será verificada a existência do
+	 *            método
+	 * @return <code>true</code> se existir um método <code>set()</code> vï¿½lido
+	 *         para o campo indicado; caso contrário, retorna <code>false</code>
 	 *         .
 	 */
 	public static boolean existeSet(Object objeto, String nomeDoCampo) {

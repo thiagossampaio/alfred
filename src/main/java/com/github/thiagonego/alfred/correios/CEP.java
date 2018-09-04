@@ -14,13 +14,13 @@
  *  You should have received a copy of the GNU General Public License
  *  along with Alfred Library.  If not, see <http://www.gnu.org/licenses/>.
  */
-package br.com.twsoftware.alfred.correios;
+package com.github.thiagonego.alfred.correios;
 
 import java.util.Collection;
 import java.util.Map;
 
-import br.com.twsoftware.alfred.AlfredException;
-import br.com.twsoftware.alfred.io.CSVReader;
+import com.github.thiagonego.alfred.AlfredException;
+import com.github.thiagonego.alfred.io.CSVReader;
 
 
 /**

@@ -1,8 +1,8 @@
-package br.com.twsoftware.alfred.numeros;
+package com.github.thiagonego.alfred.numeros;
 
 import java.math.BigDecimal;
 
-import br.com.twsoftware.alfred.texto.Texto;
+import com.github.thiagonego.alfred.texto.Texto;
 
 
 /**
