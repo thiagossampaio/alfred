@@ -4,7 +4,7 @@ Suite de aplicativos para Java/Groovy. Esse projeto foi inicialmente criado por 
 
 ## Uso
 
-Como utilizamos o github para hospedar, a biblioteca JitPack tem nos ajudado muito para empacotar e distribuir o Alfred. Portanto para utilizá-lo em seu projeto basta adicionar um repositório e referenciar a lib da seguinte forma.
+Como utilizamos o github para hospedar, a biblioteca JitPack tem nos ajudado muito para empacotar e distribuir o Alfred. Portanto, para utilizá-lo em seu projeto basta adicionar um repositório e referenciar a lib da seguinte forma.
 
 
 #### Maven 
