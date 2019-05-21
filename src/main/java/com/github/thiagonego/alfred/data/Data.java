@@ -21,6 +21,8 @@ import java.sql.Timestamp;
 import java.text.DateFormatSymbols;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -469,6 +471,22 @@ final public class Data {
 	public static boolean isDiaDeSemana(Date data) {
 		return !isFinalDeSemana(data);
 	}
+	
+	/**
+	 * Verifica se uma data agendade é Sabado ou Domingo, e acrescenta proximo dia util.
+	 * 
+	 * @param LocalDate
+	 *            Se necessita saber se uma determinada Data é Final de Semana.
+	 * @return Proximo dia util.
+	 */
+	public static LocalDate getDiaUtilLocalDate(LocalDate data) {
+		if (data.getDayOfWeek() == DayOfWeek.SATURDAY) {
+			data = data.plusDays(2);
+		} else if (data.getDayOfWeek() == DayOfWeek.SUNDAY) {
+			data = data.plusDays(1);
+		}
+		return data;
+	}			
 
 	/**
 	 * Retorna a descriï¿½ï¿½o do dia da semana da data informada.
