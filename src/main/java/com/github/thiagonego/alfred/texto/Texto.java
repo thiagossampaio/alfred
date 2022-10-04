@@ -869,7 +869,7 @@ public class Texto{
 
           try {
 
-               MessageDigest messageDigest = MessageDigest.getInstance("SHA1");
+               MessageDigest messageDigest = MessageDigest.getInstance("SHA256");
                messageDigest.update(texto.getBytes());
 
                return bytesToHex(messageDigest.digest());
@@ -908,4 +908,5 @@ public class Texto{
           }
           return stringReverse;
      }
+     
 }
